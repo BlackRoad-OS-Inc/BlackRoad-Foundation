@@ -1,0 +1,25 @@
+{
+  "name": "BlackRoad-Foundation",
+  "org": "BlackRoad-OS-Inc",
+  "category": "foundation",
+  "title": "BlackRoad Foundation",
+  "deploy": {
+    "target": "gematria",
+    "path": "/var/www/blackroad/BlackRoad-Foundation",
+    "ssl": "auto",
+    "cdn": true
+  },
+  "mirrors": {
+    "gitea": "https://git.blackroad.io/BlackRoad-OS-Inc/BlackRoad-Foundation",
+    "github": "https://github.com/BlackRoad-OS-Inc/BlackRoad-Foundation"
+  },
+  "ci": {
+    "on_push": ["build", "deploy"],
+    "on_pr": ["lint", "audit"]
+  },
+  "monitoring": {
+    "uptime": true,
+    "analytics": "roadanalytics",
+    "alerts": "nats"
+  }
+}
